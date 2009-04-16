@@ -16,7 +16,7 @@ __END__
 @@ layout
 %html
   %head
-    %title= "Sharing"
+    %title Sharing
   %body
     = yield
 
