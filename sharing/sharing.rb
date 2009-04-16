@@ -8,7 +8,6 @@ before do
 end
 
 get '/' do
-  @title = "Sharing is Caring"
   haml :index
 end
 
