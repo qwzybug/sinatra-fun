@@ -1,0 +1,20 @@
+Simplest example I could think of to serve two Sinatra apps that can speak to
+one another.
+
+To make it work:
+symlink left/public and right/public to multi/left and multi/right,
+and do something like this in your apache .conf file:
+
+<VirtualHost *>
+   DocumentRoot /path/to/your/multi
+   RailsEnv development
+   RackBaseURI /left
+   RackBaseURI /right
+</VirtualHost>
+
+Things I don't like:
+
+- Routes are defined app-relative, but links are server-relative.
+So, the main method for the left head is '/', but you link to it with '/left/'.
+
+- It's only 6 LoC, there's only so much I can hate for now.
