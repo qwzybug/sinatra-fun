@@ -11,6 +11,10 @@ get '/' do
   haml :index
 end
 
+get '/sharing' do
+  haml :caring
+end
+
 __END__
 
 @@ layout
@@ -25,5 +29,6 @@ __END__
   Sharing means
   %a{:href => '/caring'}= @sharing
 %h2
-  and Caring means
-  = @caring
+  %a{:href => '/sharing'}
+    and Caring means
+    = @caring
